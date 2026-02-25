@@ -4,18 +4,18 @@ import { searchKnowledge, knowledgeBase } from '@/lib/knowledge'
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '')
 
-const SYSTEM_PROMPT = `당신은 오준호의 포트폴리오 웹사이트에 있는 AI 어시스턴트입니다.
-오준호에 대한 질문에 친절하고 전문적으로 답변합니다.
+const SYSTEM_PROMPT = `당신은 오준호의 포트폴리오 웹사이트에 있는 AI 어시스턴트 "준호봇"입니다.
+오준호에 대한 질문뿐 아니라, 일반적인 대화나 잡담에도 친절하게 응대합니다.
 
-규칙:
-1. 제공된 컨텍스트 정보만을 기반으로 답변하세요.
-2. 컨텍스트에 없는 정보는 추측하지 말고, "해당 정보는 제가 가진 자료에 없습니다"라고 답하세요.
-3. 한국어로 답변하세요.
-4. 답변은 간결하되 핵심 내용은 빠짐없이 전달하세요.
-5. 수치나 성과를 언급할 때는 정확한 숫자를 사용하세요.
-6. 오준호에 대해 긍정적이되 과장하지 않는 톤을 유지하세요.
-7. 강점검사(CliftonStrengths), 사주 분석 등 개인적 검사 결과에 대해서도 자연스럽게 답변하세요.
-8. 마크다운 형식(볼드, 리스트 등)을 적절히 활용하세요.`
+핵심 원칙:
+1. 오준호 관련 질문에는 아래 제공된 컨텍스트를 우선 활용하되, 컨텍스트에 없는 부분은 일반 지식으로 자연스럽게 보충해도 됩니다.
+2. 오준호의 경력/성과 등 구체적 수치를 언급할 때는 컨텍스트의 정확한 숫자를 사용하세요.
+3. 오준호와 무관한 일반 질문(기술 질문, 인사, 잡담 등)에도 자유롭게 답변하세요.
+4. 한국어로 답변하세요. (단, 사용자가 영어로 질문하면 영어로 답변)
+5. 친근하고 전문적인 톤을 유지하세요.
+6. 강점검사(CliftonStrengths), 사주 분석 등 개인적 검사 결과도 자연스럽게 답변하세요.
+7. 마크다운 형식(볼드, 리스트 등)을 적절히 활용하세요.
+8. 답변이 너무 길어지지 않도록 핵심 위주로 전달하되, 필요하면 상세하게 답해도 됩니다.`
 
 export async function POST(request: NextRequest) {
   let message = ''
@@ -34,18 +34,16 @@ export async function POST(request: NextRequest) {
   // RAG: 질문과 관련된 지식 청크 검색
   const relevantChunks = searchKnowledge(message)
 
-  // 관련 청크가 없으면 전체 소개 + 강점 + 사주 기본 포함
-  let context: string
-  if (relevantChunks.length === 0) {
-    const fallbackChunks = knowledgeBase.filter((c) =>
-      ['intro-1', 'achievements', 'strength-overview', 'saju-overview'].includes(c.id)
-    )
-    context = fallbackChunks.map((c) => `[${c.category} - ${c.title}]\n${c.content}`).join('\n\n---\n\n')
-  } else {
-    context = relevantChunks
-      .map((c) => `[${c.category} - ${c.title}]\n${c.content}`)
-      .join('\n\n---\n\n')
-  }
+  // 관련 청크 + 항상 기본 소개 포함
+  const baseChunks = knowledgeBase.filter((c) =>
+    ['intro-1', 'achievements', 'strength-overview', 'saju-overview'].includes(c.id)
+  )
+  const allChunks = relevantChunks.length > 0
+    ? [...relevantChunks, ...baseChunks.filter((b) => !relevantChunks.some((r) => r.id === b.id))]
+    : baseChunks
+  const context = allChunks
+    .map((c) => `[${c.category} - ${c.title}]\n${c.content}`)
+    .join('\n\n---\n\n')
 
   // Gemini API 시도
   const apiKey = process.env.GEMINI_API_KEY
@@ -55,15 +53,13 @@ export async function POST(request: NextRequest) {
 
       const prompt = `${SYSTEM_PROMPT}
 
-아래는 오준호에 대한 관련 정보입니다:
+아래는 오준호에 대한 참고 정보입니다 (답변에 활용하되, 이 정보에 없는 질문도 자유롭게 답변하세요):
 
 ${context}
 
 ---
 
-사용자 질문: ${message}
-
-위 컨텍스트를 기반으로 답변하세요.`
+사용자: ${message}`
 
       const result = await model.generateContent(prompt)
       const response = result.response
