@@ -51,7 +51,7 @@ export async function POST(request: NextRequest) {
   const apiKey = process.env.GEMINI_API_KEY
   if (apiKey && apiKey !== 'your_gemini_api_key_here') {
     try {
-      const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' })
+      const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' })
 
       const prompt = `${SYSTEM_PROMPT}
 
