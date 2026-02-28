@@ -4,6 +4,7 @@ import About from '@/components/About'
 import Experience from '@/components/Experience'
 import Projects from '@/components/Projects'
 import Skills from '@/components/Skills'
+import PeopleSay from '@/components/PeopleSay'
 import Contact from '@/components/Contact'
 import Chatbot from '@/components/Chatbot'
 
@@ -19,6 +20,7 @@ export default function Home() {
       <Experience />
       <Projects />
       <Skills />
+      <PeopleSay />
       <Contact />
       <Chatbot />
     </>
