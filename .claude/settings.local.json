@@ -6,7 +6,10 @@
       "Bash(npx tsc --noEmit)",
       "Skill(commit-commands:commit-push-pr)",
       "Skill(commit-commands:commit-push-pr:*)",
-      "Bash(git checkout -b feat/people-say-section)"
+      "Bash(git checkout -b feat/people-say-section)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(git add .claude/settings.local.json .claude/launch.json)",
+      "Bash(git commit:*)"
     ]
   }
 }

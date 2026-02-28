@@ -34,6 +34,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* ── 한국어 가독성: 음절 중간 줄바꿈 방지 ── */
+p, li, h1, h2, h3, h4, h5, span, div {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
 /* ── Animations ── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(16px); }
@@ -124,6 +130,9 @@ body {
     grid-template-columns: 1fr !important;
   }
   .projects-grid > a[style*="grid-column"] {
+    grid-template-columns: 1fr !important;
+  }
+  .private-projects-grid {
     grid-template-columns: 1fr !important;
   }
   .skills-grid {

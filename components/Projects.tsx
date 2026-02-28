@@ -63,6 +63,50 @@ const projects = [
   },
 ]
 
+const privateProjects = [
+  {
+    name: '타겟 발굴 자동화',
+    desc: '브라운백 커피 재직 시 개발. 잠재 고객사 정보를 웹에서 자동 수집·정제해 영업 리스트로 변환하는 파이프라인. 수동 대비 시간 80% 단축, 팀 전체에 배포해 조직 역량 향상.',
+    tags: ['Python', 'Selenium', 'Google Apps Script', 'Pandas'],
+    achievement: '시간 80% 단축',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="22" height="22">
+        <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
+        <line x1="11" y1="8" x2="11" y2="14" /><line x1="8" y1="11" x2="14" y2="11" />
+      </svg>
+    ),
+  },
+  {
+    name: '콜드메일 A/B 테스트 시스템',
+    desc: '제목·본문·CTA 3가지 변수 조합으로 콜드메일 효과를 자동 비교. 발송 후 오픈율·회신율을 스프레드시트에 집계하고 최적안을 선택. 회신율 1.7% → 3.8% 개선.',
+    tags: ['Python', 'Google Sheets API', 'SMTP', 'Pandas'],
+    achievement: '회신율 2.2배',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="22" height="22">
+        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+      </svg>
+    ),
+  },
+  {
+    name: 'SDR 내부 자동화 툴킷',
+    desc: 'PortOne SDR 재직 중 구축한 사내 영업 자동화 도구 모음. 잠재고객 회사 정보 자동 수집, Gemini 기반 개인화 제안서 생성, SalesClue 열람 추적 연동.',
+    tags: ['Python', 'Google Apps Script', 'Gemini API', 'Perplexity'],
+    achievement: '11,674건 발송 기반',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="22" height="22">
+        <rect x="2" y="7" width="20" height="14" rx="2" /><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" />
+      </svg>
+    ),
+  },
+]
+
+const LockIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+    <path d="M7 11V7a5 5 0 0110 0v4" />
+  </svg>
+)
+
 const LinkIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
     <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
@@ -219,6 +263,64 @@ export default function Projects() {
             </a>
           ))}
         </div>
+
+        {/* ── 비공개 프로젝트 ─────────────────────────────────── */}
+        <div className="reveal" style={{ marginTop: 40 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 20 }}>
+            <div style={{ height: 1, flex: 1, background: 'var(--color-border)' }} />
+            <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, fontWeight: 700, color: 'var(--color-muted)', textTransform: 'uppercase', letterSpacing: 1.5, padding: '4px 12px', border: '1px solid var(--color-border)', borderRadius: 100, background: 'var(--color-surface)', whiteSpace: 'nowrap' }}>
+              <LockIcon />
+              비공개 프로젝트
+            </div>
+            <div style={{ height: 1, flex: 1, background: 'var(--color-border)' }} />
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }} className="private-projects-grid">
+            {privateProjects.map((p) => (
+              <div
+                key={p.name}
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  background: 'var(--color-surface)',
+                  border: '1px solid var(--color-border)',
+                  borderRadius: 'var(--radius)',
+                  padding: 20,
+                  position: 'relative',
+                  overflow: 'hidden',
+                }}
+              >
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 12 }}>
+                  <div style={{ width: 40, height: 40, borderRadius: 'var(--radius-sm)', background: 'var(--color-surface-2)', border: '1px solid var(--color-border)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-muted)' }}>
+                    {p.icon}
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 11, fontWeight: 600, color: 'var(--color-muted)', background: 'var(--color-surface-2)', border: '1px solid var(--color-border)', padding: '3px 8px', borderRadius: 100 }}>
+                    <LockIcon />
+                    Private
+                  </div>
+                </div>
+                <div style={{ fontFamily: 'var(--font-heading)', fontSize: 14, fontWeight: 700, marginBottom: 6, letterSpacing: '-0.3px' }}>
+                  {p.name}
+                </div>
+                <p style={{ fontSize: 12, color: 'var(--color-muted)', lineHeight: 1.65, flex: 1, marginBottom: 12 }}>{p.desc}</p>
+                <div style={{ display: 'flex', gap: 5, flexWrap: 'wrap', marginBottom: 10 }}>
+                  {p.tags.map((t) => (
+                    <span key={t} style={{ background: 'var(--color-surface-2)', border: '1px solid var(--color-border)', color: 'var(--color-secondary)', fontSize: 10, fontWeight: 600, padding: '2px 7px', borderRadius: 100 }}>
+                      {t}
+                    </span>
+                  ))}
+                </div>
+                <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--color-accent)', display: 'flex', alignItems: 'center', gap: 4 }}>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  {p.achievement}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   )
