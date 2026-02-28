@@ -61,61 +61,66 @@ export default function Hero() {
                 fontFamily: 'var(--font-heading)',
                 fontSize: 'clamp(40px, 6vw, 64px)',
                 fontWeight: 700,
-                lineHeight: 1.1,
+                lineHeight: 1.15,
                 letterSpacing: '-2px',
                 marginBottom: 20,
                 opacity: 0,
                 animation: 'fadeUp 0.55s 0.2s ease forwards',
+                wordBreak: 'keep-all',
+                overflowWrap: 'break-word',
               }}
             >
-              데이터로{' '}
-              <span
-                style={{
-                  color: 'var(--color-accent)',
-                  position: 'relative',
-                  display: 'inline-block',
-                }}
-              >
-                세일즈
+              <span style={{ display: 'block' }}>
+                데이터로{' '}
                 <span
                   style={{
-                    content: "''",
-                    position: 'absolute',
-                    bottom: 2,
-                    left: 0,
-                    right: 0,
-                    height: 4,
-                    background: 'linear-gradient(90deg, var(--color-accent), #7C3AED)',
-                    borderRadius: 2,
-                    opacity: 0.25,
+                    color: 'var(--color-accent)',
+                    position: 'relative',
+                    display: 'inline-block',
                   }}
-                />
+                >
+                  세일즈
+                  <span
+                    style={{
+                      content: "''",
+                      position: 'absolute',
+                      bottom: 2,
+                      left: 0,
+                      right: 0,
+                      height: 4,
+                      background: 'linear-gradient(90deg, var(--color-accent), #7C3AED)',
+                      borderRadius: 2,
+                      opacity: 0.25,
+                    }}
+                  />
+                </span>
+                를
               </span>
-              를
-              <br />
-              코드로{' '}
-              <span
-                style={{
-                  color: 'var(--color-accent)',
-                  position: 'relative',
-                  display: 'inline-block',
-                }}
-              >
-                자동화
+              <span style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                코드로{' '}
                 <span
                   style={{
-                    position: 'absolute',
-                    bottom: 2,
-                    left: 0,
-                    right: 0,
-                    height: 4,
-                    background: 'linear-gradient(90deg, var(--color-accent), #7C3AED)',
-                    borderRadius: 2,
-                    opacity: 0.25,
+                    color: 'var(--color-accent)',
+                    position: 'relative',
+                    display: 'inline-block',
                   }}
-                />
+                >
+                  자동화
+                  <span
+                    style={{
+                      position: 'absolute',
+                      bottom: 2,
+                      left: 0,
+                      right: 0,
+                      height: 4,
+                      background: 'linear-gradient(90deg, var(--color-accent), #7C3AED)',
+                      borderRadius: 2,
+                      opacity: 0.25,
+                    }}
+                  />
+                </span>
+                합니다
               </span>
-              합니다
             </h1>
 
             {/* 설명 */}
