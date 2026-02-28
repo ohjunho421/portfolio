@@ -7,6 +7,7 @@ const navLinks = [
   { href: '#experience', label: '경력' },
   { href: '#projects', label: '프로젝트' },
   { href: '#skills', label: '스킬' },
+  { href: '#people-say', label: '남이 보는 나' },
 ]
 
 export default function Navbar() {
