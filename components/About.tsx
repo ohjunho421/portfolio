@@ -149,21 +149,22 @@ export default function About() {
           <div className="reveal reveal-delay-1">
             {[
               <>
-                생명과학을 전공하며 <strong style={{ color: 'var(--color-primary)', fontWeight: 700 }}>데이터 기반 가설 검증의 과학적 사고</strong>를 익혔지만,<br/>
-                저를 더 흥분시킨 것은 비즈니스 현장이었습니다.<br/>
+                생명과학을 전공하며 <strong style={{ color: 'var(--color-primary)', fontWeight: 700 }}>데이터 기반 가설 검증의 과학적 사고</strong>를 익혔지만,
+                저를 더 흥분시킨 것은 비즈니스 현장이었습니다.
                 고객 행동 데이터를 분석해 영업 시스템을 만들고, 매출과 계약이라는 결과를 직접 만들어내는 과정에 매력을 느껴 데이터 중심 B2B 세일즈로 전환했습니다.
               </>,
               <>
                 브라운백 커피, 오픈놀, 포트원을 거치며{' '}
-                <strong style={{ color: 'var(--color-primary)', fontWeight: 700 }}>&apos;가설 수립 후 검증&apos;과 &apos;3회 이상 반복 업무는 자동화&apos;</strong>라는 원칙을 세웠습니다.<br/>
-                잠재고객 발굴부터 메일 발송과 열람 추적까지 전 과정을 Google Apps Script와 AI 챗봇으로 직접 자동화하여,<br/>
-                사람이 집중해야 할 고객 소통과 제안에 시간을 투자합니다.
+                <strong style={{ color: 'var(--color-primary)', fontWeight: 700 }}>&apos;가설 수립 후 검증&apos;과 &apos;3회 이상 반복 업무는 자동화&apos;</strong>라는
+                원칙을 세웠습니다. 잠재고객 발굴부터 메일 발송과 열람 추적까지 전 과정을
+                Google Apps Script와 AI 챗봇으로 직접 자동화하여, 사람이 집중해야 할
+                고객 소통과 제안에 시간을 투자합니다.
               </>,
               <>
                 현재 PortOne에서 SDR로 재직하며{' '}
-                <strong style={{ color: 'var(--color-primary)', fontWeight: 700 }}>11,674건 콜드메일, 회신율 2.2배 향상, 30건 미팅에서 5건 계약</strong>을 달성했습니다.<br/>
-                개발은 부트캠프와 독학으로 익혔고, Python·TypeScript로 실제 서비스 가능한 SaaS를 만들며<br/>
-                기술과 세일즈를 하나의 무기로 통합합니다.
+                <strong style={{ color: 'var(--color-primary)', fontWeight: 700 }}>11,674건 콜드메일, 회신율 2.2배 향상, 30건 미팅에서 5건 계약</strong>을
+                달성했습니다. 개발은 부트캠프와 독학으로 익혔고, Python·TypeScript로
+                실제 서비스 가능한 SaaS를 만들며 기술과 세일즈를 하나의 무기로 통합합니다.
               </>,
             ].map((p, i) => (
               <p key={i} style={{ fontSize: 15, lineHeight: 1.8, color: 'var(--color-secondary)', marginBottom: 16 }}>
