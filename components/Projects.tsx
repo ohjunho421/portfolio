@@ -7,7 +7,7 @@ const projects = [
     featured: true,
     href: 'https://github.com/ohjunho421/blogcheatkey_railway',
     name: 'BlogCheatKey',
-    desc: '자영업자를 위한 AI 기반 SEO 최적화 블로그 자동 생성 SaaS 플랫폼. 키워드 하나로 1,700~2,000자 SEO 최적화 글을 3분 내 생성. Claude Sonnet + Gemini 2.5 Pro + Perplexity 멀티 AI 아키텍처. 포트원 결제 연동, Google/Kakao/Naver OAuth 구현.',
+    desc: '자영업자를 위한 AI 기반 SEO 최적화 블로그 자동 생성 SaaS 플랫폼.<br>키워드 하나로 1,700~2,000자 SEO 최적화 글을 3분 내 생성.<br>Claude Sonnet + Gemini 2.5 Pro + Perplexity 멀티 AI 아키텍처.<br>포트원 결제 연동, Google/Kakao/Naver OAuth 구현.',
     tags: ['TypeScript', 'React 18', 'Node.js', 'PostgreSQL', 'Claude AI', 'Gemini', 'Perplexity', 'Railway'],
     stats: [
       { num: '3분', label: '6시간 → 3분으로 단축' },
@@ -24,7 +24,7 @@ const projects = [
     featured: false,
     href: 'https://github.com/ohjunho421/email-copywriting-chatbot',
     name: '콜드메일 자동화 챗봇',
-    desc: 'PortOne SDR 업무에서 직접 개발·사용 중인 AI 영업 메일 생성 시스템. CSV 업로드 → 회사 정보 자동 수집 → Gemini 기반 개인화 문안 4종 생성. SSR 알고리즘 기반 관련성 스코어링, 24시간 캐시로 효율 극대화.',
+    desc: 'PortOne SDR 업무에서 직접 개발·사용 중인 AI 영업 메일 생성 시스템.<br>CSV 업로드 → 회사 정보 자동 수집 → Gemini 기반 개인화 문안 4종 생성.<br>SSR 알고리즘 기반 관련성 스코어링, 24시간 캐시로 효율 극대화.',
     tags: ['Python', 'Flask', 'Gemini 2.5', 'Perplexity', 'Selenium', 'Pandas'],
     stats: [],
     icon: (
@@ -38,7 +38,7 @@ const projects = [
     featured: false,
     href: 'https://github.com/ohjunho421/saju-tarot',
     name: '사주 타로 통합 서비스',
-    desc: '동양 사주 만세력과 서양 타로를 융합한 AI 운세 해석 플랫폼. 생년월일시 기반 오행 분석 + 다중 타로 스프레드 + OpenAI 통합 해석. React 18 + TypeScript, Framer Motion 애니메이션, 163개 커밋 활발 개발 중.',
+    desc: '동양 사주 만세력과 서양 타로를 융합한 AI 운세 해석 플랫폼.<br>생년월일시 기반 오행 분석 + 다중 타로 스프레드 + OpenAI 통합 해석.<br>React 18 + TypeScript, Framer Motion 애니메이션, 163개 커밋 활발 개발 중.',
     tags: ['TypeScript', 'React 18', 'Node.js', 'OpenAI', 'Zustand', 'Framer Motion'],
     stats: [],
     icon: (
@@ -52,7 +52,7 @@ const projects = [
     featured: false,
     href: 'https://github.com/ohjunho421/lottodeeplearing',
     name: '로또 딥러닝 예측 웹앱',
-    desc: 'XGBoost + RandomForest 머신러닝으로 로또 번호 추천하는 Django 웹앱. 과거 당첨 빈도 vs 미래 잠재력 이중 전략, JWT 인증, OpenAI 챗봇 UI. 1스타 획득, 56개 커밋.',
+    desc: 'XGBoost + RandomForest 머신러닝으로 로또 번호 추천하는 Django 웹앱.<br>과거 당첨 빈도 vs 미래 잠재력 이중 전략, JWT 인증, OpenAI 챗봇 UI.<br>1스타 획득, 56개 커밋.',
     tags: ['Python', 'Django', 'XGBoost', 'scikit-learn', 'Pandas', 'JWT'],
     stats: [],
     icon: (
@@ -66,7 +66,7 @@ const projects = [
 const privateProjects = [
   {
     name: '타겟 발굴 자동화',
-    desc: '브라운백 커피 재직 시 개발. 잠재 고객사 정보를 웹에서 자동 수집·정제해 영업 리스트로 변환하는 파이프라인. 수동 대비 시간 80% 단축, 팀 전체에 배포해 조직 역량 향상.',
+    desc: '브라운백 커피 재직 시 개발.<br>잠재 고객사 정보를 웹에서 자동 수집·정제해 영업 리스트로 변환하는 파이프라인.<br>수동 대비 시간 80% 단축, 팀 전체에 배포해 조직 역량 향상.',
     tags: ['Python', 'Selenium', 'Google Apps Script', 'Pandas'],
     achievement: '시간 80% 단축',
     icon: (
@@ -78,7 +78,7 @@ const privateProjects = [
   },
   {
     name: '콜드메일 A/B 테스트 시스템',
-    desc: '제목·본문·CTA 3가지 변수 조합으로 콜드메일 효과를 자동 비교. 발송 후 오픈율·회신율을 스프레드시트에 집계하고 최적안을 선택. 회신율 1.7% → 3.8% 개선.',
+    desc: '제목·본문·CTA 3가지 변수 조합으로 콜드메일 효과를 자동 비교.<br>발송 후 오픈율·회신율을 스프레드시트에 집계하고 최적안을 선택.<br>회신율 1.7% → 3.8% 개선.',
     tags: ['Python', 'Google Sheets API', 'SMTP', 'Pandas'],
     achievement: '회신율 2.2배',
     icon: (
@@ -89,7 +89,7 @@ const privateProjects = [
   },
   {
     name: 'SDR 내부 자동화 툴킷',
-    desc: 'PortOne SDR 재직 중 구축한 사내 영업 자동화 도구 모음. 잠재고객 회사 정보 자동 수집, Gemini 기반 개인화 제안서 생성, SalesClue 열람 추적 연동.',
+    desc: 'PortOne SDR 재직 중 구축한 사내 영업 자동화 도구 모음.<br>잠재고객 회사 정보 자동 수집, Gemini 기반 개인화 제안서 생성,<br>SalesClue 열람 추적 연동.',
     tags: ['Python', 'Google Apps Script', 'Gemini API', 'Perplexity'],
     achievement: '11,674건 발송 기반',
     icon: (
@@ -202,7 +202,7 @@ export default function Projects() {
               <div style={{ fontFamily: 'var(--font-heading)', fontSize: 20, fontWeight: 700, marginBottom: 6, letterSpacing: '-0.3px' }}>
                 {featured.name}
               </div>
-              <p style={{ fontSize: 13, color: 'var(--color-muted)', lineHeight: 1.65 }}>{featured.desc}</p>
+              <p style={{ fontSize: 13, color: 'var(--color-muted)', lineHeight: 1.65 }} dangerouslySetInnerHTML={{ __html: featured.desc }} />
               <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginTop: 16 }}>
                 {featured.tags.map((t) => (
                   <span key={t} style={{ background: 'var(--color-surface-2)', border: '1px solid var(--color-border)', color: 'var(--color-secondary)', fontSize: 11, fontWeight: 600, padding: '3px 9px', borderRadius: 100 }}>
@@ -252,7 +252,7 @@ export default function Projects() {
               <div style={{ fontFamily: 'var(--font-heading)', fontSize: 16, fontWeight: 700, marginBottom: 6, letterSpacing: '-0.3px' }}>
                 {p.name}
               </div>
-              <p style={{ fontSize: 13, color: 'var(--color-muted)', lineHeight: 1.65, flex: 1 }}>{p.desc}</p>
+              <p style={{ fontSize: 13, color: 'var(--color-muted)', lineHeight: 1.65, flex: 1 }} dangerouslySetInnerHTML={{ __html: p.desc }} />
               <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginTop: 16 }}>
                 {p.tags.map((t) => (
                   <span key={t} style={{ background: 'var(--color-surface-2)', border: '1px solid var(--color-border)', color: 'var(--color-secondary)', fontSize: 11, fontWeight: 600, padding: '3px 9px', borderRadius: 100 }}>
@@ -302,7 +302,7 @@ export default function Projects() {
                 <div style={{ fontFamily: 'var(--font-heading)', fontSize: 14, fontWeight: 700, marginBottom: 6, letterSpacing: '-0.3px' }}>
                   {p.name}
                 </div>
-                <p style={{ fontSize: 12, color: 'var(--color-muted)', lineHeight: 1.65, flex: 1, marginBottom: 12 }}>{p.desc}</p>
+                <p style={{ fontSize: 12, color: 'var(--color-muted)', lineHeight: 1.65, flex: 1, marginBottom: 12 }} dangerouslySetInnerHTML={{ __html: p.desc }} />
                 <div style={{ display: 'flex', gap: 5, flexWrap: 'wrap', marginBottom: 10 }}>
                   {p.tags.map((t) => (
                     <span key={t} style={{ background: 'var(--color-surface-2)', border: '1px solid var(--color-border)', color: 'var(--color-secondary)', fontSize: 10, fontWeight: 600, padding: '2px 7px', borderRadius: 100 }}>
