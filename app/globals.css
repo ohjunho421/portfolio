@@ -157,3 +157,9 @@ p, li, h1, h2, h3, h4, h5, span, div {
     transition-duration: .01ms !important;
   }
 }
+
+/* ── Experience strong highlight ── */
+#experience strong {
+  color: var(--color-accent);
+  font-weight: 700;
+}

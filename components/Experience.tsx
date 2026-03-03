@@ -109,7 +109,7 @@ export default function Experience() {
                 background: 'var(--color-surface)',
                 border: '1px solid var(--color-border)',
                 borderRadius: 'var(--radius)',
-                padding: 28,
+                padding: 32,
                 transition: 'box-shadow var(--transition), transform var(--transition)',
                 cursor: 'default',
               }}
@@ -124,7 +124,7 @@ export default function Experience() {
                 el.style.transform = ''
               }}
             >
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 16, marginBottom: 12 }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 16, marginBottom: 20 }}>
                 <div>
                   <div style={{ fontFamily: 'var(--font-heading)', fontSize: 18, fontWeight: 700, letterSpacing: '-0.3px' }}>
                     {exp.company}
@@ -150,19 +150,19 @@ export default function Experience() {
                 </div>
               </div>
 
-              <ul style={{ listStyle: 'none', marginTop: 12 }}>
+              <ul style={{ listStyle: 'none', marginTop: 0, borderTop: '1px solid var(--color-border)', paddingTop: 20 }}>
                 {exp.bullets.map((b, i) => (
                   <li
                     key={i}
-                    style={{ fontSize: 14, color: 'var(--color-secondary)', paddingLeft: 18, position: 'relative', marginBottom: 8, lineHeight: 1.65 }}
+                    style={{ fontSize: 15, color: 'var(--color-secondary)', paddingLeft: 22, position: 'relative', marginBottom: 14, lineHeight: 1.82 }}
                   >
                     <span
                       style={{
                         position: 'absolute',
                         left: 0,
-                        top: 9,
-                        width: 6,
-                        height: 6,
+                        top: 11,
+                        width: 7,
+                        height: 7,
                         borderRadius: '50%',
                         background: 'var(--color-accent)',
                         display: 'block',
@@ -174,7 +174,7 @@ export default function Experience() {
               </ul>
 
               {exp.kpis.length > 0 && (
-                <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginTop: 16 }}>
+                <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginTop: 0, borderTop: '1px solid var(--color-border)', paddingTop: 20 }}>
                   {exp.kpis.map((kpi) => (
                     <div
                       key={kpi.label}
@@ -189,7 +189,7 @@ export default function Experience() {
                       <div style={{ fontFamily: 'var(--font-heading)', fontSize: 18, fontWeight: 700, color: 'var(--color-accent)', lineHeight: 1 }}>
                         {kpi.num}
                       </div>
-                      <div style={{ fontSize: 11, color: 'var(--color-muted)', marginTop: 3 }}>{kpi.label}</div>
+                      <div style={{ fontSize: 12, color: 'var(--color-muted)', marginTop: 3 }}>{kpi.label}</div>
                     </div>
                   ))}
                 </div>
